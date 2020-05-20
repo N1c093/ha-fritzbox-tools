@@ -7,7 +7,7 @@ import xmltodict
 
 from collections import Counter, defaultdict
 
-from homeassistant.components.switch import SwitchEntity, ENTITY_ID_FORMAT
+from homeassistant.components.switch import SwitchDevice, ENTITY_ID_FORMAT
 from homeassistant.helpers.typing import HomeAssistantType
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.util import slugify
@@ -153,7 +153,7 @@ async def async_setup_entry(
     return True
 
 
-class FritzBoxPortSwitch(SwitchEntity):
+class FritzBoxPortSwitch(SwitchDevice):
     """Defines a FRITZ!Box Tools PortForward switch."""
 
     icon = "mdi:lan"
@@ -295,7 +295,7 @@ class FritzBoxPortSwitch(SwitchEntity):
             return True
 
 
-class FritzBoxDeflectionSwitch(SwitchEntity):
+class FritzBoxDeflectionSwitch(SwitchDevice):
     """Defines a FRITZ!Box Tools PortForward switch."""
 
     icon = "mdi:phone-forward"
@@ -440,7 +440,7 @@ class FritzBoxDeflectionSwitch(SwitchEntity):
             return True
 
 
-class FritzBoxProfileSwitch(SwitchEntity):
+class FritzBoxProfileSwitch(SwitchDevice):
     """Defines a FRITZ!Box Tools DeviceProfile switch."""
 
     # Note: Update routine is very slow. SCAN_INTERVAL should be set to higher values!
@@ -584,7 +584,7 @@ class FritzBoxProfileSwitch(SwitchEntity):
             return True
 
 
-class FritzBoxWifiSwitch(SwitchEntity):
+class FritzBoxWifiSwitch(SwitchDevice):
     """Defines a FRITZ!Box Tools Wifi switch."""
 
     icon = "mdi:wifi"
